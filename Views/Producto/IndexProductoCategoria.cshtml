@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Web_App1.Models.Productos>
+
+@{
+    ViewData["Title"] = "IndexProductoCategoria";
+}
+<br />
+<br />
+<br />
+<br />
+<h1 class="text-center text-black"> :::: LISTA DE PRODUCTOS POR NOMBRE Y  CATEGORÍA ::::</h1>
+<br />
+<hr />
+
+@using (Html.BeginForm())
+{
+    <em class="text-black">Ingrese el nombre del producto:  </em>
+    @Html.TextBox("NomProducto", "") ;
+    <br />
+    <br />
+    <em class="text-black"> Categoría: </em>
+    @Html.DropDownList("IdCategoria", (SelectList)ViewBag.Categoria, "Seleccione")
+    <br />
+    <br />
+    <button class="btn btn-success">Consultar productos</button>
+}
+<br />
+<br />
+<table class="table table-bordered table-hover  table-warning">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantxUnidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnidadesEnExistencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnidadesEnPedido)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantxUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadesEnExistencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadesEnPedido)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@for (int i = 0; i < (int)ViewBag.pags; i++)
+{
+    @Html.ActionLink((i + 1).ToString(), "IndexProductoCategoria",
+    new { NomProducto = ViewBag.NomProducto, IdCategoria = ViewBag.IdCategoria, pa = i },
+    new { @class = "btn btn-success" })
+}
+
+
+
+

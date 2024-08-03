@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 class="text-black"> ¡Bienvenidos  a NEGOCIOS 2024!</h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="fs-3 fw-bold text-black"> Puedes ingresar a </p>
+    <br />
+    <br />
+
+    <button class="boton">
+    @Html.ActionLink("Buscar empleados por distrito", "IndexEmpleadosDistrito", "Empleado", null, new { @class = "text-dark text-decoration-none" })
+    </button>
+    <button class="boton">
+    @Html.ActionLink("Buscar productos por categoría", "IndexProductoCategoria", "Producto", null, new { @class = "text-dark text-decoration-none" })
+</button>
+
+</div>
+

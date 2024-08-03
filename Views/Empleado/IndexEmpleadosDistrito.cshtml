@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Web_App1.Models.Empleados>
+
+@{
+    ViewData["Title"] = "IndexEmpleadosDistrito";
+}
+<br />
+<br />
+<br />
+<br />
+<h1 class="text-center text-black"> :::: LISTA DE EMPLEADOS POR DISTRITO ::::</h1>
+<br />
+<hr />
+
+@using (Html.BeginForm())
+{
+    <em class="text-black">Seleccione del distrito: </em>
+    @Html.DropDownList("IdDistrito", (SelectList)ViewBag.Distrito, "Distrito")
+    <button class="btn btn-success">Consultar empleados</button>
+}
+<br />
+<br />
+<table class="table table-bordered table-hover table-warning">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApeEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecNac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DirEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomDistrito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fonoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.desCargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecContrata)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApeEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecNac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomDistrito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fonoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desCargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecContrata)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
