@@ -1,0 +1,59 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.boton {
+    background-color: #ffd800;
+    border-radius: 20px;
+    font-size: 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-family:'Berlin Sans FB';
+    padding: 10px 10px;
+    margin-left: 20px;
+   /* display:flex;*/
+}
+.boton:hover{
+    background-color:limegreen;
+    color:aliceblue;
+}
+
+.container {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  
+}
+
+
+.navi {
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+}
+
+.navi:hover {
+    color: limegreen; 
+ 
+}
+
+.lab {
+    margin-left: 45%;
+
+}
